@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="ChannelsTask" extends="Task">
+    <interface>
+        <field id="contenturi" type="uri"/>
+        <field id="content" type="node"/>
+    </interface>
+
+    <script type="text/brightscript">
+
+        <![CDATA[
+
+        sub init()
+            m.top.functionName = "getcontent"
+        end sub
+
+        sub getcontent()
+
+            print "Hola"
+
+            result = ""
+            timeout = 10000
+
+            ut = CreateObject("roURLTransfer")
+            ut.SetPort(CreateObject("roMessagePort"))
+            ut.SetURL(m.top.contenturi)
+            ut.SetCertificatesFile("common:/certs/ca-bundle.crt")
+            if ut.AsyncGetToString()
+                event = wait(timeout, ut.GetPort())
+                if type(event) = "roUrlEvent"
+                    result = event.GetString()
+                elseif event = invalid
+                    ut.AsyncCancel()
+                else
+                    print "roUrlTransfer::AsyncGetToString(): unknown event"
+                end if
+            end if
+
+            jsonResult = ParseJSON(result)
+            print jsonResult[0]
+            print jsonResult[0][0].carousel.carousel
+
+        end sub
+
+        ]]>
+    </script>
+</component>
