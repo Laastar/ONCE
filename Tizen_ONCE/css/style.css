@@ -1,0 +1,123 @@
+
+
+body {
+	background-color: #000000;
+	overflow-x: hidden;
+}
+
+#menus {
+	height: 100vh;
+	overflow-y: hidden;
+}
+
+.seccion {
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+section div.item {
+	display: inline-block;
+	width: 23%;
+	height: 100%;
+}
+
+.imagen-card {
+	display: block;
+	width: 90%;
+	margin: auto;
+}
+
+span {
+	color: #FFFFFF;
+}
+
+.btn-eps {
+	width: 100%;
+	text-align: left;
+}
+
+#mensajeSalida {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.9); /* Black background with opacity */
+  z-index: 5; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+#tituloSalida,
+#seguirApp,
+#salirApp {
+	color: #FFFFFF !important;
+}
+
+#overlaySearch {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.9); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+
+
+#busquedaDin > a {
+	font-size: 5vh;
+}
+
+.button.active {
+	transform: scale(1.15);
+}
+
+.button {
+	width: 100%;
+	padding: 0
+}
+
+.page {
+	left: 0;
+	top: 0;
+	position: absolute;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	transition: all .8s ease-out;
+	
+}
+
+#ep-page {
+	padding: 7%;
+	font-size: 30px;
+	background-color: #28b4db;
+}
+
+#p1 {
+	left: 200%;
+	background-color: #28b4db;
+}
+
+#p1.animate {
+	transform: translateX(-200%);
+	transition-delay: all .8s ease-out;
+}
+
+#p2 {
+	left: 300%;
+	background-color: #bc06cc;
+}
+
+#p2.animate {
+	transform: translateX(-300%);
+	transition-delay: all .8s ease-out;
+}
